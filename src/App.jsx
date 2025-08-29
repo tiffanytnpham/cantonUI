@@ -1,4 +1,6 @@
+import Header from "./components/Header"
 import FilterBar from "./components/FilterBar"
+
 import { useState } from "react"
 
 export default function App() {
@@ -10,8 +12,8 @@ export default function App() {
 
   return (
     <>
-      <h1>Hello World</h1>
-      <FilterBar onChange={handleFilterChange}/>
+      <Header />
+      <FilterBar value={filter} onChange={handleFilterChange}/>
     </>
   )
 }

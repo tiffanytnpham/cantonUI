@@ -1,9 +1,36 @@
-export default function FilterBar ({ onChange }) {
+import "./FilterBar.css";
+
+export default function FilterBar ({ value, onChange }) {
     return (
-        <>
-            <button onClick={() => { console.log("All clicked"); onChange("all"); }}>All</button>
-            <button onClick={() => { console.log("Transactions clicked"); onChange("transactions"); }}>Transactions</button>
-            <button onClick={() => { console.log("Automations clicked"); onChange("automations"); }}>Automations</button>
-        </>
+        <nav className="filter-bar">
+            <h1>Filter By:</h1>
+            <button 
+                className={value === "all" ? "active" : ""} 
+                onClick={() => { 
+                    console.log("All clicked"); 
+                    onChange("all"); 
+                    }}
+                >
+                    All
+                </button>
+            <button 
+                className={value === "transactions" ? "active" : ""} 
+                onClick={() => { 
+                    console.log("Transactions clicked"); 
+                    onChange("transactions"); 
+                    }}
+                >
+                    Transactions
+                </button>
+            <button 
+                className={value === "automations" ? "active" : ""} 
+                onClick={() => { 
+                    console.log("Automations clicked"); 
+                    onChange("automations"); 
+                    }}
+                >
+                    Automations
+                </button>
+        </nav>
     )
 }
